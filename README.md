@@ -1,1 +1,1 @@
-## High-Resolution Time Series Data Visulalization using Closed-loop SFCs
+## High-Resolution Time Series Data Vis. using Closed-loop SFCs
