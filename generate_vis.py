@@ -1,5 +1,5 @@
 from bokeh.plotting import figure
-from bokeh.models import ColumnDataSource, LinearColorMapper, ColorBar
+from bokeh.models import ColumnDataSource, LinearColorMapper, ColorBar, Span
 from bokeh.transform import linear_cmap
 from matplotlib import cm
 from matplotlib.colors import rgb2hex
@@ -31,11 +31,18 @@ def vis_line_chart(values):
 
     yaxis_labels = {}
     for i, values_one_row in enumerate(values):
-        p.line(
+        p.varea(
             x=range(len(values_one_row)),
-            y=i
+            y1=[i - 0.45] * len(values_one_row),
+            y2=i
             - 0.45
             + 0.9 * (np.array(values_one_row) - min_values) / (max_values - min_values),
+        )
+        h_span = Span(location=i - 0.45, dimension="width")
+        p.renderers.extend(
+            [
+                h_span,
+            ]
         )
         yaxis_labels[i] = "y[" + str(i) + "]"
     p.yaxis.ticker = list(yaxis_labels.keys())
