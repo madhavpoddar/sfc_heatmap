@@ -36,7 +36,7 @@ Now, with the same data and color map, we try our approach:
 
 ### Ridgeline Plot Version  Vs SFC based High-Resolution Heatmap Version
 
-Following is the Ridgeline Plot:
+For the same data, we get the following Ridgeline Plot:
 
 ![Alt](ridgeline.png "Ridgeline Plot")
 
